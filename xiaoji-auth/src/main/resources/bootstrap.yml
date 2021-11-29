@@ -1,0 +1,25 @@
+# Tomcat
+server: 
+  port: 9200
+
+# Spring
+spring: 
+  application:
+    # application name
+    name: xiaoji-auth
+  profiles:
+    # dev config
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # service register address
+        server-addr: 121.36.229.15:8848
+      config:
+        # config center address
+        server-addr: 121.36.229.15:8848
+        # config file format
+        file-extension: yml
+        # share config
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
