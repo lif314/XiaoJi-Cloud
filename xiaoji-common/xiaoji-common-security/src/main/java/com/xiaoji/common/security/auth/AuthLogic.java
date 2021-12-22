@@ -21,7 +21,7 @@ import com.xiaoji.system.api.model.LoginUser;
 /**
  * Token 权限验证，逻辑实现类
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class AuthLogic
 {

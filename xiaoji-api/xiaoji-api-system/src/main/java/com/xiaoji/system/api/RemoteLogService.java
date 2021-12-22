@@ -14,7 +14,7 @@ import com.xiaoji.system.api.domain.SysLogininfor;
 /**
  * 日志服务
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @FeignClient(contextId = "remoteLogService", value = ServiceNameConstants.SYSTEM_SERVICE, fallbackFactory = RemoteLogFallbackFactory.class)
 public interface RemoteLogService

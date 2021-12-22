@@ -7,7 +7,7 @@ import com.xiaoji.system.api.model.LoginUser;
 /**
  * Token 权限验证工具类
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class AuthUtil
 {

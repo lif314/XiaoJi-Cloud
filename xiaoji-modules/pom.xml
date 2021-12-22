@@ -14,7 +14,6 @@
         <module>xiaoji-job</module>
         <module>xiaoji-file</module>
         <module>xiaoji-makeup</module>
-        <module>text</module>
     </modules>
 
     <artifactId>xiaoji-modules</artifactId>

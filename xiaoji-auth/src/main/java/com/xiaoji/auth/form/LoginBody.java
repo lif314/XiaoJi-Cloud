@@ -3,7 +3,7 @@ package com.xiaoji.auth.form;
 /**
  * 用户登录对象
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class LoginBody
 {

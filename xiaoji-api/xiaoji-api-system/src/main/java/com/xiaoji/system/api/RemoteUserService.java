@@ -16,7 +16,7 @@ import com.xiaoji.common.core.domain.R;
 /**
  * 用户服务
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @FeignClient(contextId = "remoteUserService", value = ServiceNameConstants.SYSTEM_SERVICE, fallbackFactory = RemoteUserFallbackFactory.class)
 public interface RemoteUserService

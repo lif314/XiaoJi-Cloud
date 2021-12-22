@@ -118,4 +118,10 @@ public class Constants
      */
     public static final String[] JOB_ERROR_STR = { "java.net.URL", "javax.naming.InitialContext", "org.yaml.snakeyaml",
             "org.springframework.jndi" };
+
+    /**
+     * 无用微信信息
+     */
+    public static String wxAppId = "wx00e680cbf69d159c";
+    public static String wxAppSecret = "4902e0e4470663112f505f498b036c55";
 }

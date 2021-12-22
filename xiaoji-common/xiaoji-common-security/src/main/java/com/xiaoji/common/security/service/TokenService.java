@@ -21,7 +21,7 @@ import com.xiaoji.system.api.model.LoginUser;
 /**
  * token验证处理
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @Component
 public class TokenService
@@ -52,6 +52,8 @@ public class TokenService
         loginUser.setUsername(userName);
         loginUser.setIpaddr(IpUtils.getIpAddr(ServletUtils.getRequest()));
         refreshToken(loginUser);
+
+        System.out.println("token: "  + token);
 
         // Jwt存储信息
         Map<String, Object> claimsMap = new HashMap<String, Object>();

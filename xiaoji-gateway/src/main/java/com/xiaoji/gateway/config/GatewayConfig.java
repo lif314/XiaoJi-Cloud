@@ -9,7 +9,7 @@ import com.xiaoji.gateway.handler.SentinelFallbackHandler;
 /**
  * 网关限流配置
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @Configuration
 public class GatewayConfig

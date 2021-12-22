@@ -13,7 +13,7 @@ import com.xiaoji.system.api.domain.SysFile;
 /**
  * 文件服务
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @FeignClient(contextId = "remoteFileService", value = ServiceNameConstants.FILE_SERVICE, fallbackFactory = RemoteFileFallbackFactory.class)
 public interface RemoteFileService

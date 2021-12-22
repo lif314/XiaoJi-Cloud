@@ -262,6 +262,7 @@
         <module>xiaoji-modules</module>
         <module>xiaoji-api</module>
         <module>xiaoji-common</module>
+        <module>xiaoji-device</module>
     </modules>
     <packaging>pom</packaging>
 

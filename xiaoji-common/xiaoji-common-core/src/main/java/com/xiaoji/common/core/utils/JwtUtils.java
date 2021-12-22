@@ -11,11 +11,11 @@ import io.jsonwebtoken.SignatureAlgorithm;
 /**
  * Jwt工具类
  *
- * @author ruoyi
+ * @author xiaoji
  */
 public class JwtUtils
 {
-    public static String secret = TokenConstants.SECRET;
+    public final static String secret = TokenConstants.SECRET;
 
     /**
      * 从数据声明生成令牌
@@ -25,8 +25,7 @@ public class JwtUtils
      */
     public static String createToken(Map<String, Object> claims)
     {
-        String token = Jwts.builder().setClaims(claims).signWith(SignatureAlgorithm.HS512, secret).compact();
-        return token;
+        return Jwts.builder().setClaims(claims).signWith(SignatureAlgorithm.HS512, secret).compact();
     }
 
     /**

@@ -3,7 +3,7 @@ package com.xiaoji.common.core.constant;
 /**
  * 权限相关通用常量
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class SecurityConstants
 {

@@ -21,7 +21,7 @@ import com.xiaoji.system.api.model.LoginUser;
 /**
  * 登录校验方法
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @Component
 public class SysLoginService

@@ -42,7 +42,7 @@ import com.xiaoji.system.service.ISysUserService;
 /**
  * 用户信息
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @RestController
 @RequestMapping("/user")
@@ -151,7 +151,7 @@ public class SysUserController extends BaseController
      * 
      * @return 用户信息
      */
-    @GetMapping("getInfo")
+    @GetMapping("/getInfo")
     public AjaxResult getInfo()
     {
         Long userId = SecurityUtils.getUserId();

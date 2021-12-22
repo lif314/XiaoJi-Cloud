@@ -28,7 +28,7 @@ import com.xiaoji.system.service.ISysConfigService;
 /**
  * 参数配置 信息操作处理
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @RestController
 @RequestMapping("/config")

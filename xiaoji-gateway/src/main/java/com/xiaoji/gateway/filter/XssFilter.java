@@ -29,7 +29,7 @@ import reactor.core.publisher.Mono;
 /**
  * 跨站脚本过滤器
  *
- * @author ruoyi
+ * @author xiaoji
  */
 @Component
 @ConditionalOnProperty(value = "security.xss.enabled", havingValue = "true")

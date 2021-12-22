@@ -14,7 +14,7 @@ import com.xiaoji.system.api.domain.SysFile;
 /**
  * 文件请求处理
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @RestController
 public class SysFileController

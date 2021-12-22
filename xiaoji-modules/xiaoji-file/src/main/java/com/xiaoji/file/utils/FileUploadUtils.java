@@ -15,7 +15,7 @@ import com.xiaoji.common.core.utils.file.MimeTypeUtils;
 /**
  * 文件上传工具类
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class FileUploadUtils
 {

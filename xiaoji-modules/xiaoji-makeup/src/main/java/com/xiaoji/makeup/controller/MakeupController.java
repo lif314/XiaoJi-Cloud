@@ -6,10 +6,6 @@ import com.xiaoji.makeup.service.IFaceBeautifyService;
 import com.xiaoji.makeup.service.IMakeupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.bind.annotation.ResponseBody;
-//import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin

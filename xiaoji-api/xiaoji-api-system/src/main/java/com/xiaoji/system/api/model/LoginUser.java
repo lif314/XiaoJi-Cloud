@@ -7,7 +7,7 @@ import com.xiaoji.system.api.domain.SysUser;
 /**
  * 用户信息
  *
- * @author ruoyi
+ * @author xiaoji
  */
 public class LoginUser implements Serializable
 {

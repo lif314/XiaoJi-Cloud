@@ -18,10 +18,11 @@ import com.xiaoji.common.core.utils.StringUtils;
 import com.xiaoji.gateway.service.ValidateCodeService;
 import reactor.core.publisher.Flux;
 
+
 /**
  * 验证码过滤器
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @Component
 public class ValidateCodeFilter extends AbstractGatewayFilterFactory<Object>

@@ -21,7 +21,7 @@ import com.xiaoji.system.api.model.LoginUser;
 /**
  * token 控制
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @RestController
 public class TokenController

@@ -1,15 +1,15 @@
 # 基础镜像
 FROM  openjdk:8-jre
 # author
-MAINTAINER ruoyi
+MAINTAINER xiaoji
 
 # 挂载目录
-VOLUME /home/ruoyi
+VOLUME /home/xiaoji
 # 创建目录
-RUN mkdir -p /home/ruoyi
+RUN mkdir -p /home/xiaoji
 # 指定路径
-WORKDIR /home/ruoyi
+WORKDIR /home/xiaoji
 # 复制jar文件到路径
-COPY ./jar/ruoyi-modules-job.jar /home/ruoyi/ruoyi-modules-job.jar
+COPY ./jar/xiaoji-modules-job.jar /home/xiaoji/xiaoji-modules-job.jar
 # 启动定时任务服务
-ENTRYPOINT ["java","-jar","ruoyi-modules-job.jar"]
+ENTRYPOINT ["java","-jar","xiaoji-modules-job.jar"]
