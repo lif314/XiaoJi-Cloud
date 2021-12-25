@@ -109,7 +109,7 @@ public class XssFilter implements GlobalFilter, Ordered
     /**
      * 是否是Json请求
      * 
-     * @param request
+     * @param exchange 请求
      */
     public boolean isJsonRequest(ServerWebExchange exchange)
     {

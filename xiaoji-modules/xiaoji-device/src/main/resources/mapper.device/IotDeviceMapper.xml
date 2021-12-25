@@ -47,8 +47,6 @@
 
 
 
-
-
     <sql id="selectIotDeviceVo">
         select d.device_id, d.device_num, d.category_id, d.device_name, d.firmware_version, d.owner_id,d.status, d.create_by,
         d.create_time, d.update_by, d.update_time, d.remark,

@@ -9,6 +9,7 @@ import com.xiaoji.common.core.web.domain.AjaxResult;
 import com.xiaoji.common.core.web.page.TableDataInfo;
 import com.xiaoji.common.log.annotation.Log;
 import com.xiaoji.common.log.enums.BusinessType;
+import com.xiaoji.common.security.annotation.RequiresPermissions;
 import com.xiaoji.device.domain.IotDevice;
 import com.xiaoji.device.domain.vo.DeviceControlCMD;
 import com.xiaoji.device.domain.vo.IotDeviceListDto;
@@ -39,7 +40,7 @@ public class IotDeviceController extends BaseController {
      * 查询设备列表
      */
     @ApiOperation(value = "设备列表", notes = "设备列表")
-    @PreAuthorize("@ss.hasPermi('device:device:list')")
+    @RequiresPermissions("device:device:list")
     @GetMapping("/list")
     public TableDataInfo list(IotDevice iotDevice) {
         startPage();
@@ -54,7 +55,7 @@ public class IotDeviceController extends BaseController {
      * 导出设备列表
      */
     @ApiOperation(value = "导出设备列表", notes = "导出设备列表")
-    @PreAuthorize("@ss.hasPermi('device:device:export')")
+    @RequiresPermissions("device:device:export")
     @Log(title = "设备", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(IotDevice iotDevice) {
@@ -67,7 +68,7 @@ public class IotDeviceController extends BaseController {
      * 获取设备详细信息
      */
     @ApiOperation(value = "获取设备详情", notes = "获取设备详情")
-    @PreAuthorize("@ss.hasPermi('device:device:query')")
+    @RequiresPermissions("device:device:query")
     @GetMapping(value = "/{deviceId}")
     public AjaxResult getInfo(@PathVariable("deviceId") Long deviceId) {
         return AjaxResult.success(iotDeviceService.selectIotDeviceById(deviceId));
@@ -77,7 +78,7 @@ public class IotDeviceController extends BaseController {
      * 根据设备编号获取设备详细信息
      */
     @ApiOperation(value = "根据设备编号获取设备详情", notes = "根据设备编号获取设备详情")
-    @PreAuthorize("@ss.hasPermi('device:device:query')")
+    @RequiresPermissions("device:device:query")
     @GetMapping(value = "/getByNum/{deviceNum}")
     public AjaxResult getInfoByNum(@PathVariable("deviceNum") String deviceNum) {
         return AjaxResult.success(iotDeviceService.selectIotDeviceByNum(deviceNum));
@@ -87,7 +88,7 @@ public class IotDeviceController extends BaseController {
      * 新增设备
      */
     @ApiOperation(value = "新增设备", notes = "新增设备")
-    @PreAuthorize("@ss.hasPermi('device:device:add')")
+    @RequiresPermissions("device:device:add")
     @Log(title = "设备", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody IotDevice iotDevice) {
@@ -105,7 +106,7 @@ public class IotDeviceController extends BaseController {
      * 修改设备
      */
     @ApiOperation(value = "修改设备", notes = "修改设备")
-    @PreAuthorize("@ss.hasPermi('device:device:edit')")
+    @RequiresPermissions("device:device:edit")
     @Log(title = "设备", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody IotDevice iotDevice) {
@@ -116,7 +117,7 @@ public class IotDeviceController extends BaseController {
      * 删除设备
      */
     @ApiOperation(value = "删除设备", notes = "删除设备")
-    @PreAuthorize("@ss.hasPermi('device:device:remove')")
+    @RequiresPermissions("device:device:remove")
     @Log(title = "设备", businessType = BusinessType.DELETE)
     @DeleteMapping("/{deviceIds}")
     public AjaxResult remove(@PathVariable Long[] deviceIds) {
@@ -139,7 +140,7 @@ public class IotDeviceController extends BaseController {
     }
 
     @ApiOperation(value = "控制设备", notes = "控制设备")
-    @PreAuthorize("@ss.hasPermi('device:device:control')")
+    @RequiresPermissions("device:device:control")
     @Log(title = "设备", businessType = BusinessType.UPDATE)
     @PostMapping("/control")
     public AjaxResult control(@RequestBody DeviceControlCMD deviceControlCMD) {
@@ -157,7 +158,7 @@ public class IotDeviceController extends BaseController {
 
 
     @ApiOperation(value = "小程序设备列表", notes = "小程序设备列表")
-    @PreAuthorize("@ss.hasPermi('device:device:list')")
+    @RequiresPermissions("device:device:list")
     @GetMapping("/listDevice")
     public TableDataInfo listDevice(IotDevice iotDevice) {
         startPage();

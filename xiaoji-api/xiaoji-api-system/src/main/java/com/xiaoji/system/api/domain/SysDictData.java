@@ -12,7 +12,7 @@ import com.xiaoji.common.core.web.domain.BaseEntity;
 /**
  * 字典数据表 sys_dict_data
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class SysDictData extends BaseEntity
 {

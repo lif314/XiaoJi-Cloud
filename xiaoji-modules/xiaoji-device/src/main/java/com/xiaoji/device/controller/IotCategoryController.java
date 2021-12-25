@@ -44,7 +44,7 @@ public class IotCategoryController extends BaseController {
      * 查询设备分类列表
      */
     @ApiOperation(value = "分类列表", notes = "分类列表")
-    @PreAuthorize("@ss.hasPermi('device:category:list')")
+    @RequiresPermissions("device:category:list")
     @GetMapping("/list")
     public TableDataInfo list(IotCategory iotCategory) {
         startPage();
@@ -69,7 +69,7 @@ public class IotCategoryController extends BaseController {
      * 获取设备分类详细信息
      */
     @ApiOperation(value = "获取分类详情", notes = "获取分类详情")
-    @PreAuthorize("@ss.hasPermi('device:category:query')")
+    @RequiresPermissions("device:category:query")
     @GetMapping(value = "/{categoryId}")
     public AjaxResult getInfo(@PathVariable("categoryId") Long categoryId) {
         return AjaxResult.success(iotCategoryService.selectIotCategoryById(categoryId));
@@ -79,7 +79,7 @@ public class IotCategoryController extends BaseController {
      * 新增设备分类
      */
     @ApiOperation(value = "新增分类", notes = "新增分类")
-    @PreAuthorize("@ss.hasPermi('device:category:add')")
+    @RequiresPermissions("device:category:add")
     @Log(title = "设备分类", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody IotCategory iotCategory) {
@@ -90,7 +90,7 @@ public class IotCategoryController extends BaseController {
      * 修改设备分类
      */
     @ApiOperation(value = "修改分类", notes = "修改分类")
-    @PreAuthorize("@ss.hasPermi('device:category:edit')")
+    @RequiresPermissions("device:category:edit")
     @Log(title = "设备分类", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody IotCategory iotCategory) {
@@ -101,7 +101,7 @@ public class IotCategoryController extends BaseController {
      * 删除设备分类
      */
     @ApiOperation(value = "删除分类", notes = "删除分类")
-    @PreAuthorize("@ss.hasPermi('device:category:remove')")
+    @RequiresPermissions("device:category:remove")
     @Log(title = "设备分类", businessType = BusinessType.DELETE)
     @DeleteMapping("/{categoryIds}")
     public AjaxResult remove(@PathVariable Long[] categoryIds) {

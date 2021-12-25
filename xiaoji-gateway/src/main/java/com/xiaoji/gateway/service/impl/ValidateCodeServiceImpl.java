@@ -23,7 +23,7 @@ import com.xiaoji.gateway.service.ValidateCodeService;
 /**
  * 验证码实现处理
  *
- * @author ruoyi
+ * @author xiaoji
  */
 @Service
 public class ValidateCodeServiceImpl implements ValidateCodeService

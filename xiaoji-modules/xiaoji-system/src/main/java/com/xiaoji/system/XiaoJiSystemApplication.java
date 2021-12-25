@@ -9,7 +9,7 @@ import com.xiaoji.common.security.annotation.EnableRyFeignClients;
 /**
  * 系统模块
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @EnableCustomConfig
 @EnableCustomSwagger2

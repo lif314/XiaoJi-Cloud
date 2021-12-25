@@ -11,7 +11,7 @@ import com.xiaoji.common.core.web.domain.BaseEntity;
 /**
  * 角色表 sys_role
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class SysRole extends BaseEntity
 {
