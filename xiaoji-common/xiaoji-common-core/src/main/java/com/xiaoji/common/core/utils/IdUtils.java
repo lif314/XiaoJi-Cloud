@@ -5,7 +5,7 @@ import com.xiaoji.common.core.text.UUID;
 /**
  * ID生成器工具类
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class IdUtils
 {

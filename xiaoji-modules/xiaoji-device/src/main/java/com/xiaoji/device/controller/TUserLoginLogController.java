@@ -3,6 +3,7 @@ package com.xiaoji.device.controller;
 import java.util.List;
 
 import com.xiaoji.common.core.web.controller.BaseController;
+import com.xiaoji.common.security.annotation.RequiresPermissions;
 import com.xiaoji.device.domain.TUserLoginLog;
 import com.xiaoji.device.service.ITUserLoginLogService;
 import com.xiaoji.common.core.web.domain.AjaxResult;
@@ -34,7 +35,7 @@ public class TUserLoginLogController extends BaseController {
     /**
      * 查询【请填写功能名称】列表
      */
-    @PreAuthorize("@ss.hasPermi('device:log:list')")
+    @RequiresPermissions("device:log:list")
     @GetMapping("/list")
     public TableDataInfo list(TUserLoginLog tUserLoginLog) {
         startPage();
@@ -45,7 +46,7 @@ public class TUserLoginLogController extends BaseController {
     /**
      * 导出【请填写功能名称】列表
      */
-    @PreAuthorize("@ss.hasPermi('device:log:export')")
+    @RequiresPermissions("device:log:export")
     @Log(title = "【请填写功能名称】", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(TUserLoginLog tUserLoginLog) {
@@ -57,7 +58,7 @@ public class TUserLoginLogController extends BaseController {
     /**
      * 获取【请填写功能名称】详细信息
      */
-    @PreAuthorize("@ss.hasPermi('device:log:query')")
+    @RequiresPermissions("device:log:query")
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") Long id) {
         return AjaxResult.success(tUserLoginLogService.selectTUserLoginLogById(id));
@@ -66,7 +67,7 @@ public class TUserLoginLogController extends BaseController {
     /**
      * 新增【请填写功能名称】
      */
-    @PreAuthorize("@ss.hasPermi('device:log:add')")
+    @RequiresPermissions("device:log:add")
     @Log(title = "【请填写功能名称】", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody TUserLoginLog tUserLoginLog) {
@@ -76,7 +77,7 @@ public class TUserLoginLogController extends BaseController {
     /**
      * 修改【请填写功能名称】
      */
-    @PreAuthorize("@ss.hasPermi('device:log:edit')")
+    @RequiresPermissions("device:log:edit")
     @Log(title = "【请填写功能名称】", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody TUserLoginLog tUserLoginLog) {
@@ -86,7 +87,7 @@ public class TUserLoginLogController extends BaseController {
     /**
      * 删除【请填写功能名称】
      */
-    @PreAuthorize("@ss.hasPermi('device:log:remove')")
+    @RequiresPermissions("device:log:remove")
     @Log(title = "【请填写功能名称】", businessType = BusinessType.DELETE)
     @DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable Long[] ids) {

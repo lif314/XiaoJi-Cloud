@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * 【请填写功能名称】Mapper接口
  *
  */
-@Repository
+
 public interface TUserLoginLogMapper {
     /**
      * 查询【请填写功能名称】

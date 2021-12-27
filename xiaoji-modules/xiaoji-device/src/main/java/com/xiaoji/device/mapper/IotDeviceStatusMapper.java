@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * 设备状态Mapper接口
  *
  */
-@Repository
+
 public interface IotDeviceStatusMapper {
     /**
      * 查询设备状态

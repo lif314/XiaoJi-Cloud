@@ -6,13 +6,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.xiaoji.device.domain.IotDevice;
 import com.xiaoji.device.domain.vo.IotDeviceListDto;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
+
 
 /**
  * 设备Mapper接口
  *
  */
-@Repository
+
 public interface IotDeviceMapper {
     /**
      * 查询设备

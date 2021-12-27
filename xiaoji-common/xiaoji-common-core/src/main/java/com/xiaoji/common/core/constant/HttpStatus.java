@@ -3,7 +3,7 @@ package com.xiaoji.common.core.constant;
 /**
  * 返回状态码
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class HttpStatus
 {

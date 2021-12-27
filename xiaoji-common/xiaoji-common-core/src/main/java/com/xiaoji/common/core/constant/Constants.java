@@ -3,7 +3,7 @@ package com.xiaoji.common.core.constant;
 /**
  * 通用常量信息
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class Constants
 {

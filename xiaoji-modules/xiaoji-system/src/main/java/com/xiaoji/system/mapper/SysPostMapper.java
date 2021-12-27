@@ -7,7 +7,7 @@ import com.xiaoji.system.domain.SysPost;
 /**
  * 岗位信息 数据层
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public interface SysPostMapper
 {

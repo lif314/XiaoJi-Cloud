@@ -5,7 +5,7 @@ import com.xiaoji.common.core.exception.base.BaseException;
 /**
  * 文件信息异常类
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class FileException extends BaseException
 {

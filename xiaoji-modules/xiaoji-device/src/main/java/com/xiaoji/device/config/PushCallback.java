@@ -82,9 +82,9 @@ public class PushCallback implements MqttCallback {
                 iotDeviceService.insertIotDevice(device);
             }
             //获取设备状态(消息内容不能为空，硬件获取不到数据报错)
-            mqttPushClient.publish(1, false, "status/get/" + device.getDeviceNum(), "wumei.live");
+            mqttPushClient.publish(1, false, "status/get/" + device.getDeviceNum(), "xiaoji.live");
             //获取设备配置
-            mqttPushClient.publish(1, false, "setting/get/" + device.getDeviceNum(), "wumei.live");
+            mqttPushClient.publish(1, false, "setting/get/" + device.getDeviceNum(), "xiaoji.live");
         } else if (topic.equals("status")) {
             IotDeviceStatus deviceStatus = JSON.parseObject(new String(mqttMessage.getPayload()), IotDeviceStatus.class);
             IotDevice device = iotDeviceService.selectIotDeviceByNum(deviceStatus.getDeviceNum());

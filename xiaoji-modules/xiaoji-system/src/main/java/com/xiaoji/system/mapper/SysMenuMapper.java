@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 /**
  * 菜单表 数据层
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public interface SysMenuMapper
 {
@@ -53,7 +53,7 @@ public interface SysMenuMapper
     /**
      * 根据用户ID查询菜单
      * 
-     * @param username 用户ID
+     * @param userId 用户ID
      * @return 菜单列表
      */
     public List<SysMenu> selectMenuTreeByUserId(Long userId);

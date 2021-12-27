@@ -5,6 +5,7 @@ import java.util.List;
 import com.xiaoji.common.core.web.controller.BaseController;
 import com.xiaoji.common.core.web.domain.AjaxResult;
 import com.xiaoji.common.core.web.page.TableDataInfo;
+import com.xiaoji.common.security.annotation.RequiresPermissions;
 import com.xiaoji.device.domain.IotGroup;
 import com.xiaoji.device.service.IIotGroupService;
 import com.xiaoji.common.log.enums.BusinessType;
@@ -38,7 +39,7 @@ public class IotGroupController extends BaseController {
      * 查询分组列表
      */
     @ApiOperation(value = "分组列表", notes = "分组列表")
-    @PreAuthorize("@ss.hasPermi('device:group:list')")
+    @RequiresPermissions("device:group:list")
     @GetMapping("/list")
     public TableDataInfo list(IotGroup iotGroup) {
         startPage();
@@ -50,7 +51,7 @@ public class IotGroupController extends BaseController {
      * 导出分组列表
      */
     @ApiOperation(value = "导出分组", notes = "导出分组")
-    @PreAuthorize("@ss.hasPermi('device:group:export')")
+    @RequiresPermissions("device:group:export")
     @Log(title = "分组", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(IotGroup iotGroup) {
@@ -63,7 +64,7 @@ public class IotGroupController extends BaseController {
      * 获取分组详细信息
      */
     @ApiOperation(value = "获取分组详情", notes = "获取分组详情")
-    @PreAuthorize("@ss.hasPermi('device:group:query')")
+    @RequiresPermissions("device:group:query")
     @GetMapping(value = "/{groupId}")
     public AjaxResult getInfo(@PathVariable("groupId") Long groupId) {
         return AjaxResult.success(iotGroupService.selectIotGroupById(groupId));
@@ -73,7 +74,7 @@ public class IotGroupController extends BaseController {
      * 新增分组
      */
     @ApiOperation(value = "新增分组", notes = "新增分组")
-    @PreAuthorize("@ss.hasPermi('device:group:add')")
+    @RequiresPermissions("device:group:add")
     @Log(title = "分组", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody IotGroup iotGroup) {
@@ -84,7 +85,7 @@ public class IotGroupController extends BaseController {
      * 修改分组
      */
     @ApiOperation(value = "修改分组", notes = "修改分组")
-    @PreAuthorize("@ss.hasPermi('device:group:edit')")
+    @RequiresPermissions("device:group:edit")
     @Log(title = "分组", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody IotGroup iotGroup) {
@@ -95,7 +96,7 @@ public class IotGroupController extends BaseController {
      * 删除分组
      */
     @ApiOperation(value = "删除分组", notes = "删除分组")
-    @PreAuthorize("@ss.hasPermi('device:group:remove')")
+    @RequiresPermissions("device:group:remove")
     @Log(title = "分组", businessType = BusinessType.DELETE)
     @DeleteMapping("/{groupIds}")
     public AjaxResult remove(@PathVariable Long[] groupIds) {

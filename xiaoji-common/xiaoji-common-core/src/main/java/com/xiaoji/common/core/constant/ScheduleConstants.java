@@ -3,7 +3,7 @@ package com.xiaoji.common.core.constant;
 /**
  * 任务调度通用常量
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class ScheduleConstants
 {

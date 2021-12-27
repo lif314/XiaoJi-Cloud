@@ -16,6 +16,11 @@
     </description>
 
     <dependencies>
+        <!--添加读取bootstrap配置文件的依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
         <!-- SpringCloud Alibaba Nacos -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -42,6 +47,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaoji</groupId>
+            <artifactId>xiaoji-common-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaoji</groupId>
+            <artifactId>xiaoji-common-swagger</artifactId>
         </dependency>
 
     </dependencies>

@@ -64,7 +64,6 @@ public class SecurityUtils
         System.out.println("Request: " + request);
         // 从header获取token标识
         String token = request.getHeader(TokenConstants.AUTHENTICATION);
-        System.out.println("token: " + token);
         return replaceTokenPrefix(token);
     }
 
@@ -78,7 +77,6 @@ public class SecurityUtils
         {
             token = token.replaceFirst(TokenConstants.PREFIX, "");
         }
-        System.out.println("tokren:" + token);
         return token;
     }
 

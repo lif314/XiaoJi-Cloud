@@ -1,20 +1,22 @@
 package com.xiaoji.makeup;
 
-//import com.xaioji.common.swagger.annotation.EnableCustomSwagger2;
-//import com.xiaoji.common.security.annotation.EnableCustomConfig;
-//import com.xiaoji.common.security.annotation.EnableRyFeignClients;
+import com.xiaoji.common.security.annotation.EnableCustomConfig;
+import com.xiaoji.common.security.annotation.EnableRyFeignClients;
+import com.xiaoji.common.swagger.annotation.EnableCustomSwagger2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.cloud.client.SpringCloudApplication;
+
 
 /**
  * 启动类
  *
- * @author lilinfei
+ * @author xiaoji
  */
 
-//@EnableCustomSwagger2
+@EnableCustomConfig
+@EnableCustomSwagger2
+@EnableRyFeignClients
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class XiaoJiMakeupApplication {
     public static void main(String[] args) {

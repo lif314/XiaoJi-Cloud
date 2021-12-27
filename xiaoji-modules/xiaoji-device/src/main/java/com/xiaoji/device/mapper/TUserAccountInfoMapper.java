@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 /**
  * 小程序用户Mapper接口
  */
-@Repository
+
 public interface TUserAccountInfoMapper {
     /**
      * 查询小程序用户

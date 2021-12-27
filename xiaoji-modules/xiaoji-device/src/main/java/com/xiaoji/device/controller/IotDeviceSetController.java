@@ -16,6 +16,7 @@ import com.alibaba.fastjson.JSON;
 import com.xiaoji.common.core.web.controller.BaseController;
 import com.xiaoji.common.core.web.domain.AjaxResult;
 import com.xiaoji.common.core.web.page.TableDataInfo;
+import com.xiaoji.common.security.annotation.RequiresPermissions;
 import com.xiaoji.device.config.MqttPushClient;
 import com.xiaoji.device.domain.IotDevice;
 import com.xiaoji.device.domain.IotDeviceSet;
@@ -61,7 +62,7 @@ public class IotDeviceSetController extends BaseController {
      * 查询设备配置列表
      */
     @ApiOperation(value = "查询设备配置列表", notes = "查询设备配置列表")
-    @PreAuthorize("@ss.hasPermi('device:set:list')")
+    @RequiresPermissions("device:set:list")
     @GetMapping("/list")
     public TableDataInfo list(IotDeviceSet iotDeviceSet) {
         startPage();
@@ -73,7 +74,7 @@ public class IotDeviceSetController extends BaseController {
      * 导出设备配置列表
      */
     @ApiOperation(value = "导出设备配置列表", notes = "导出设备配置列表")
-    @PreAuthorize("@ss.hasPermi('device:set:export')")
+    @RequiresPermissions("device:set:export")
     @Log(title = "设备配置", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(IotDeviceSet iotDeviceSet) {
@@ -86,7 +87,7 @@ public class IotDeviceSetController extends BaseController {
      * 获取设备配置详细信息
      */
     @ApiOperation(value = "获取设备配置详情", notes = "获取设备配置详情")
-    @PreAuthorize("@ss.hasPermi('device:set:query')")
+    @RequiresPermissions("device:set:query")
     @GetMapping(value = "/{deviceSetId}")
     public AjaxResult getInfo(@PathVariable("deviceSetId") Long deviceSetId) {
         return AjaxResult.success(iotDeviceSetService.selectIotDeviceSetById(deviceSetId));
@@ -96,7 +97,7 @@ public class IotDeviceSetController extends BaseController {
      * 获取最新设备配置详细信息
      */
     @ApiOperation(value = "获取最新设备配置详情", notes = "获取最新设备配置详情")
-    @PreAuthorize("@ss.hasPermi('device:set:query')")
+    @RequiresPermissions("device:set:query")
     @GetMapping(value = "/new/{deviceId}")
     public AjaxResult getNewInfo(@PathVariable("deviceId") Long deviceId) {
         IotDeviceSet set = iotDeviceSetService.selectIotDeviceSetByDeviceId(deviceId);
@@ -129,7 +130,7 @@ public class IotDeviceSetController extends BaseController {
      * 新增设备配置
      */
     @ApiOperation(value = "新增设备配置", notes = "新增设备配置")
-    @PreAuthorize("@ss.hasPermi('device:set:add')")
+    @RequiresPermissions("device:set:add")
     @Log(title = "设备配置", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody IotDeviceSet iotDeviceSet) {
@@ -140,7 +141,7 @@ public class IotDeviceSetController extends BaseController {
      * 修改设备配置
      */
     @ApiOperation(value = "修改设备配置", notes = "修改设备配置")
-    @PreAuthorize("@ss.hasPermi('device:set:edit')")
+    @RequiresPermissions("device:set:edit")
     @Log(title = "设备配置", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody IotDeviceSet iotDeviceSet) {
@@ -211,7 +212,7 @@ public class IotDeviceSetController extends BaseController {
      * 删除设备配置
      */
     @ApiOperation(value = "删除设备配置", notes = "删除设备配置")
-    @PreAuthorize("@ss.hasPermi('device:set:remove')")
+    @RequiresPermissions("device:set:remove")
     @Log(title = "设备配置", businessType = BusinessType.DELETE)
     @DeleteMapping("/{deviceSetIds}")
     public AjaxResult remove(@PathVariable Long[] deviceSetIds) {

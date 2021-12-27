@@ -14,13 +14,20 @@
         <module>xiaoji-job</module>
         <module>xiaoji-file</module>
         <module>xiaoji-makeup</module>
+        <module>xiaoji-device</module>
+        <module>xiaoji-weather</module>
+        <module>xiaoji-news</module>
+        <module>xiaoji-finance</module>
+        <module>xiaoji-movie</module>
+        <module>xiaoji-emotion</module>
+        <module>xiaoji-authface</module>
     </modules>
 
     <artifactId>xiaoji-modules</artifactId>
     <packaging>pom</packaging>
 
     <description>
-        xiaoji-modules业务模块
+        xiaoji-modules 业务模块
     </description>
 
 </project>

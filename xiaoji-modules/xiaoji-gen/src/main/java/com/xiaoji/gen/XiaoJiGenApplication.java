@@ -1,6 +1,6 @@
 package com.xiaoji.gen;
 
-import com.xaioji.common.swagger.annotation.EnableCustomSwagger2;
+import com.xiaoji.common.swagger.annotation.EnableCustomSwagger2;
 import com.xiaoji.common.security.annotation.EnableCustomConfig;
 import com.xiaoji.common.security.annotation.EnableRyFeignClients;
 import org.springframework.boot.SpringApplication;

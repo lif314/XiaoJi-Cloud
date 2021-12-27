@@ -1,6 +1,6 @@
 package com.xiaoji.job;
 
-import com.xaioji.common.swagger.annotation.EnableCustomSwagger2;
+import com.xiaoji.common.swagger.annotation.EnableCustomSwagger2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.xiaoji.common.security.annotation.EnableCustomConfig;

@@ -7,7 +7,7 @@ import com.xiaoji.system.domain.SysConfig;
 /**
  * 参数配置 服务层
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public interface ISysConfigService
 {

@@ -9,7 +9,7 @@ import java.util.List;
  * 分组Mapper接口
  *
  */
-@Repository
+
 public interface IotGroupMapper {
     /**
      * 查询分组

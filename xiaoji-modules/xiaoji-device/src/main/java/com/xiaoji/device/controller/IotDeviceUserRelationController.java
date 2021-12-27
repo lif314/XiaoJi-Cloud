@@ -7,10 +7,10 @@ import com.xiaoji.common.core.web.domain.AjaxResult;
 import com.xiaoji.common.core.web.page.TableDataInfo;
 import com.xiaoji.common.log.annotation.Log;
 import com.xiaoji.common.log.enums.BusinessType;
+import com.xiaoji.common.security.annotation.RequiresPermissions;
 import com.xiaoji.device.domain.IotDeviceUserRelation;
 import com.xiaoji.device.service.IIotDeviceUserRelationService;
 import com.xiaoji.device.util.ExcelUtil;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,12 +32,12 @@ public class IotDeviceUserRelationController extends BaseController {
     @Autowired
     private IIotDeviceUserRelationService iotDeviceUserRelationService;
 
-/**
- * 查询【请填写功能名称】列表
- */
-@PreAuthorize("@ss.hasPermi('device:relation:list')")
-@GetMapping("/list")
-        public TableDataInfo list(IotDeviceUserRelation iotDeviceUserRelation) {
+    /**
+    * 查询【请填写功能名称】列表
+    */
+    @RequiresPermissions("device:relation:list")
+    @GetMapping("/list")
+    public TableDataInfo list(IotDeviceUserRelation iotDeviceUserRelation) {
         startPage();
         List<IotDeviceUserRelation> list = iotDeviceUserRelationService.selectIotDeviceUserRelationList(iotDeviceUserRelation);
         return getDataTable(list);
@@ -46,7 +46,7 @@ public class IotDeviceUserRelationController extends BaseController {
     /**
      * 导出【请填写功能名称】列表
      */
-    @PreAuthorize("@ss.hasPermi('device:relation:export')")
+    @RequiresPermissions("device:relation:export")
     @Log(title = "【请填写功能名称】", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(IotDeviceUserRelation iotDeviceUserRelation) {
@@ -58,7 +58,7 @@ public class IotDeviceUserRelationController extends BaseController {
     /**
      * 获取【请填写功能名称】详细信息
      */
-    @PreAuthorize("@ss.hasPermi('device:relation:query')")
+    @RequiresPermissions("device:relation:query")
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") Long id) {
         return AjaxResult.success(iotDeviceUserRelationService.selectIotDeviceUserRelationById(id));
@@ -67,7 +67,7 @@ public class IotDeviceUserRelationController extends BaseController {
     /**
      * 新增【请填写功能名称】
      */
-    @PreAuthorize("@ss.hasPermi('device:relation:add')")
+    @RequiresPermissions("device:relation:add")
     @Log(title = "【请填写功能名称】", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody IotDeviceUserRelation iotDeviceUserRelation) {
@@ -77,7 +77,7 @@ public class IotDeviceUserRelationController extends BaseController {
     /**
      * 修改【请填写功能名称】
      */
-    @PreAuthorize("@ss.hasPermi('device:relation:edit')")
+    @RequiresPermissions("device:relation:edit")
     @Log(title = "【请填写功能名称】", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody IotDeviceUserRelation iotDeviceUserRelation) {
@@ -87,7 +87,7 @@ public class IotDeviceUserRelationController extends BaseController {
     /**
      * 删除【请填写功能名称】
      */
-    @PreAuthorize("@ss.hasPermi('device:relation:remove')")
+    @RequiresPermissions("device:relation:remove")
     @Log(title = "【请填写功能名称】", businessType = BusinessType.DELETE)
     @DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable Long[] ids) {

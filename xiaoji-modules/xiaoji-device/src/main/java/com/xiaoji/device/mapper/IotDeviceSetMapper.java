@@ -3,12 +3,12 @@ package com.xiaoji.device.mapper;
 import java.util.List;
 
 import com.xiaoji.device.domain.IotDeviceSet;
-import org.springframework.stereotype.Repository;
+
 
 /**
  * 设备配置Mapper接口
  */
-@Repository
+
 public interface IotDeviceSetMapper {
     /**
      * 查询设备配置

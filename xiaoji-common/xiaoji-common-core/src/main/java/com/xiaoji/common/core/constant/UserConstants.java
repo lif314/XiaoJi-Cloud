@@ -3,7 +3,7 @@ package com.xiaoji.common.core.constant;
 /**
  * 用户常量信息
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class UserConstants
 {
