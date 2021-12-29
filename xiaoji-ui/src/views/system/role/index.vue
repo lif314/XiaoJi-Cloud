@@ -145,7 +145,7 @@
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="handleDataScope" icon="el-icon-circle-check"
                 v-hasPermi="['system:role:edit']">数据权限</el-dropdown-item>
-              <el-dropdown-item command="handleAuthUser" icon="el-icon-user"
+              <el-dropdown-item command="handleAuthUser" icon="el-icon-sysUser"
                 v-hasPermi="['system:role:edit']">分配用户</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -562,7 +562,7 @@ export default {
     /** 分配用户操作 */
     handleAuthUser: function(row) {
       const roleId = row.roleId;
-      this.$router.push("/system/role-auth/user/" + roleId);
+      this.$router.push("/system/role-auth/sysUser/" + roleId);
     },
     /** 提交按钮 */
     submitForm: function() {

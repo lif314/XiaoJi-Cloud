@@ -1,10 +1,11 @@
 package com.xiaoji.device;
 
-import com.xiaoji.common.swagger.annotation.EnableCustomSwagger2;
 import com.xiaoji.common.security.annotation.EnableCustomConfig;
+import com.xiaoji.common.swagger.annotation.EnableCustomSwagger2;
 import com.xiaoji.common.security.annotation.EnableRyFeignClients;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author xiaoji
  */
+
 @EnableCustomConfig
 @EnableCustomSwagger2
 @EnableRyFeignClients

@@ -104,7 +104,7 @@
 # INSERT INTO `gen_table` VALUES (17, 'iot_group', '设备分组', NULL, NULL, 'IotGroup', 'crud', 'com.xiaoji.device', 'device', 'group', '分组', 'kerwincui', '0', '/', '{\"parentMenuId\":\"2000\"}', 'admin', '2021-05-18 08:04:15', '', '2021-05-18 08:13:40', NULL);
 # INSERT INTO `gen_table` VALUES (18, 't_user_account_info', '小程序用户表', NULL, NULL, 'TUserAccountInfo', 'crud', 'com.xiaoji.device', 'device', 'info', '小程序用户', 'wxy', '0', '/', NULL, 'admin', '2021-08-26 14:45:28', '', NULL, NULL);
 # INSERT INTO `gen_table` VALUES (19, 't_user_login_log', '', NULL, NULL, 'TUserLoginLog', 'crud', 'com.xiaoji.device', 'device', 'log', NULL, 'wxy', '0', '/', NULL, 'admin', '2021-08-26 14:45:29', '', NULL, NULL);
-# INSERT INTO `gen_table` VALUES (20, 'sys_user', '用户信息表', NULL, NULL, 'SysUser', 'crud', 'com.xiaoji.device', 'device', 'user', '用户信息', 'wxy', '0', '/', NULL, 'admin', '2021-08-26 17:07:44', '', NULL, NULL);
+# INSERT INTO `gen_table` VALUES (20, 'sys_user', '用户信息表', NULL, NULL, 'SysUser', 'crud', 'com.xiaoji.device', 'device', 'sysUser', '用户信息', 'wxy', '0', '/', NULL, 'admin', '2021-08-26 17:07:44', '', NULL, NULL);
 # INSERT INTO `gen_table` VALUES (21, 'iot_device_user_relation', '', NULL, NULL, 'IotDeviceUserRelation', 'crud', 'com.xiaoji.device', 'device', 'relation', NULL, 'wxy', '0', '/', NULL, 'admin', '2021-08-27 11:55:05', '', NULL, NULL);
 # INSERT INTO `gen_table` VALUES (22, 'iot_device', '', NULL, NULL, 'IotDevice', 'crud', 'com.xiaoji.device', 'device', 'device', NULL, 'wxy', '0', '/', NULL, 'admin', '2021-08-27 13:45:40', '', NULL, NULL);
 

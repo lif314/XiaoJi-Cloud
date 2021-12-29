@@ -60,6 +60,12 @@
             <groupId>com.xiaoji</groupId>
             <artifactId>xiaoji-common-security</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160810</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

@@ -87,8 +87,6 @@ public class MqttPushClient {
             token = mTopic.publish(message);
             token.waitForCompletion();
             return true;
-        } catch (MqttPersistenceException e) {
-            e.printStackTrace();
         } catch (MqttException e) {
             e.printStackTrace();
         }

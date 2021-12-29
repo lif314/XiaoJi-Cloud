@@ -1,21 +1,21 @@
 package com.xiaoji.authface.controller;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.xiaoji.authface.repository.User;
+import com.xiaoji.authface.domain.SysUser;
 import com.xiaoji.authface.service.IFaceService;
 import com.xiaoji.authface.service.IUserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * User test Controller
- */
 
 @CrossOrigin
 @Controller // This means that this class is a Controller
-@RequestMapping("") // This means URL's start with / (after Application path)
-public class FaceAuthController {
+@RequestMapping("/user") // This means URL's start with / (after Application path)
+@Api(tags = "移动用户登录注册模块")
+public class SysUserController {
 
     @Autowired // 只有当接口和实现都添加@Service注解才生效
     public IUserService userService;
@@ -36,23 +36,26 @@ public class FaceAuthController {
      * step: [1] 从前端返回的账号、密码和人脸图像数据需要分开处理
      *       [2] 账号、密码和图像需要存入数据库中备份
      *       [3] 人脸数据单独注册到百度云的人脸库中
-     * @param name 账号名称
+     * @param account 账号名称
      * @param password 密码
      * @param faceBase64 人脸图像信息 Base64格式
      * @return 返回注册结果提示消息
      */
+    @ApiOperation(value = "register", notes = "账号+昵称+密码+人脸注册")
     @PostMapping(path="/register")
     public @ResponseBody
-    String addUser(@RequestParam String name, @RequestParam String password, @RequestParam String faceBase64){
-        User user = userService.register(name, password, faceBase64);  // 数据人脸存储备份
+    String register(@RequestParam String account,@RequestParam String nickname, @RequestParam String password, @RequestParam String faceBase64){
+        // 账号密码存储在数据库中
+        SysUser sysUser = userService.register(account, nickname,password);
+        // 人脸库中进行注册 -- 用户ID和昵称
+        String res = faceService.faceRegister(sysUser.getUserId().toString(), nickname, faceBase64);  // 百度云人脸注册, id与数据库保持一致
 
-        String res = faceService.faceRegister(user.getId().toString(), name, faceBase64);  // 百度云人脸注册, id与数据库保持一致
-
-        return  "{{" + user + "}" + "," + res + "}";
+        return  "{{" + sysUser + "}" + "," + res + "}";
     }
 
     // 账号登录
     @JsonProperty
+    @ApiOperation(value = "login", notes = "账号密码登录")
     @PostMapping(path = "/login")
     public @ResponseBody
     String accountLogin(@RequestParam String name, @RequestParam String password){
@@ -60,7 +63,8 @@ public class FaceAuthController {
     }
 
     // 人脸识别登录
-    @PostMapping(path = "/faceLogin")
+    @ApiOperation(value = "人脸登录", notes = "人脸登录")
+    @PostMapping(path = "/facelogin")
     public @ResponseBody String faceLogin(@RequestParam String faceBase64){
         return faceService.faceLogin(faceBase64);
     }

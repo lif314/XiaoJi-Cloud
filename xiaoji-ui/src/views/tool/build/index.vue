@@ -401,7 +401,7 @@ input, textarea{
     border-left: 1px solid #121315 !important;
     background: #363636;
     margin-right: 5px;
-    user-select: none;
+    sysUser-select: none;
   }
   .el-tabs__item.is-active{
     background: #1e1e1e;

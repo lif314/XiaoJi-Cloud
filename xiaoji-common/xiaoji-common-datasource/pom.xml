@@ -12,7 +12,7 @@
     <artifactId>xiaoji-common-datasource</artifactId>
 	
     <description>
-        xiaoji-common-datasource多数据源
+        xiaoji-common-datasource 多数据源
     </description>
 
     <dependencies>

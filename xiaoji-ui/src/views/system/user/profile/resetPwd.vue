@@ -1,13 +1,13 @@
 <template>
-  <el-form ref="form" :model="user" :rules="rules" label-width="80px">
+  <el-form ref="form" :model="sysUser" :rules="rules" label-width="80px">
     <el-form-item label="旧密码" prop="oldPassword">
-      <el-input v-model="user.oldPassword" placeholder="请输入旧密码" type="password" show-password/>
+      <el-input v-model="sysUser.oldPassword" placeholder="请输入旧密码" type="password" show-password/>
     </el-form-item>
     <el-form-item label="新密码" prop="newPassword">
-      <el-input v-model="user.newPassword" placeholder="请输入新密码" type="password" show-password/>
+      <el-input v-model="sysUser.newPassword" placeholder="请输入新密码" type="password" show-password/>
     </el-form-item>
     <el-form-item label="确认密码" prop="confirmPassword">
-      <el-input v-model="user.confirmPassword" placeholder="请确认密码" type="password" show-password/>
+      <el-input v-model="sysUser.confirmPassword" placeholder="请确认密码" type="password" show-password/>
     </el-form-item>
     <el-form-item>
       <el-button type="primary" size="mini" @click="submit">保存</el-button>
@@ -17,19 +17,19 @@
 </template>
 
 <script>
-import { updateUserPwd } from "@/api/system/user";
+import { updateUserPwd } from "@/api/system/sysUser";
 
 export default {
   data() {
     const equalToPassword = (rule, value, callback) => {
-      if (this.user.newPassword !== value) {
+      if (this.sysUser.newPassword !== value) {
         callback(new Error("两次输入的密码不一致"));
       } else {
         callback();
       }
     };
     return {
-      user: {
+      sysUser: {
         oldPassword: undefined,
         newPassword: undefined,
         confirmPassword: undefined
@@ -54,7 +54,7 @@ export default {
     submit() {
       this.$refs["form"].validate(valid => {
         if (valid) {
-          updateUserPwd(this.user.oldPassword, this.user.newPassword).then(response => {
+          updateUserPwd(this.sysUser.oldPassword, this.sysUser.newPassword).then(response => {
             this.$modal.msgSuccess("修改成功");
           });
         }

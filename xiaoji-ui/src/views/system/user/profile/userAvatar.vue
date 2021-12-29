@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="user-info-head" @click="editCropper()"><img v-bind:src="options.img" title="点击上传头像" class="img-circle img-lg" /></div>
+    <div class="sysUser-info-head" @click="editCropper()"><img v-bind:src="options.img" title="点击上传头像" class="img-circle img-lg" /></div>
     <el-dialog :title="title" :visible.sync="open" width="800px" append-to-body @opened="modalOpened"  @close="closeDialog">
       <el-row>
         <el-col :xs="24" :md="12" :style="{height: '350px'}">
@@ -55,12 +55,12 @@
 <script>
 import store from "@/store";
 import { VueCropper } from "vue-cropper";
-import { uploadAvatar } from "@/api/system/user";
+import { uploadAvatar } from "@/api/system/sysUser";
 
 export default {
   components: { VueCropper },
   props: {
-    user: {
+    sysUser: {
       type: Object
     }
   },
@@ -146,13 +146,13 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.user-info-head {
+.sysUser-info-head {
   position: relative;
   display: inline-block;
   height: 120px;
 }
 
-.user-info-head:hover:after {
+.sysUser-info-head:hover:after {
   content: '+';
   position: absolute;
   left: 0;

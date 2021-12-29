@@ -7,20 +7,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 系统模块
+ *移动用户认证模块
  * 
  * @author xiaoji
  */
-@EnableCustomConfig
+
 @EnableCustomSwagger2
-@EnableRyFeignClients
 @SpringBootApplication
 public class XiaoJiAuthfaceApplication
 {
     public static void main(String[] args)
     {
         SpringApplication.run(XiaoJiAuthfaceApplication.class, args);
-        System.out.println("(♥◠‿◠)ﾉﾞ  系统模块启动成功   ლ(´ڡ`ლ)ﾞ  \n" +
+        System.out.println("(♥◠‿◠)ﾉﾞ  人脸认证模块启动成功   ლ(´ڡ`ლ)ﾞ  \n" +
                 "   _  __                __          _____            \n" +
                 "  | |/,'  ()  _   _    / /  ()     /_  _/  __  __  /7\n" +
                 "  /  /   /7 ,'o|,'o|n_/ /  /7       / /  ,'o/,',' / \\\n" +

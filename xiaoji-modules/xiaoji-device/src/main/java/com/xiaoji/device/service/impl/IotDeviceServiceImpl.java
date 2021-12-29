@@ -183,6 +183,7 @@ public class IotDeviceServiceImpl implements IIotDeviceService {
 //        String content = JSON.toJSONString(set);
 
 //        String topic = "xiaoyi/swtich/devices/"+deviceNum;
+
         IotDeviceStatus iotDeviceStatus = new IotDeviceStatus();
         iotDeviceStatus.setDeviceId(deviceId);
         if("on".equalsIgnoreCase(cmd))
@@ -214,7 +215,6 @@ public class IotDeviceServiceImpl implements IIotDeviceService {
     *
     */
     @Override
-    @Transactional
     public int bindDevice(Long userId,String nickName, String deviceNum, String name, Long categoryId, String remark) {
         IotDevice iotDevice = iotDeviceMapper.selectIotDeviceByNum(deviceNum);
         if(iotDevice==null)
@@ -255,7 +255,6 @@ public class IotDeviceServiceImpl implements IIotDeviceService {
     }
 
     @Override
-    @Transactional
     public int updateDeviceInfo(Long userId, String nickName, Long deviceId, String name, String remark) {
         IotDevice iotDevice = iotDeviceMapper.selectIotDeviceById(deviceId);
         if(iotDevice==null)

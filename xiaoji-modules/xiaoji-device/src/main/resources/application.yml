@@ -1,0 +1,53 @@
+# 项目相关配置
+xiaoji:
+  # 名称
+  name: XiaoJi
+  # 版本
+  version: 3.2.0
+  # 版权年份
+  copyrightYear: 2021
+  # 实例演示开关
+  demoEnabled: true
+  # 文件路径 示例（ Windows配置D:/ruoyi/uploadPath，Linux配置 /home/ruoyi/uploadPath）
+  profile: D:/xiaoji/uploadPath
+  # 获取ip地址开关
+  addressEnabled: false
+  # 验证码类型 math 数组计算 char 字符验证
+  captchaType: math
+
+# 日志配置
+logging:
+  level:
+    com.xiaoji: debug
+    org.springframework: warn
+
+# Spring配置
+spring:
+  # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages
+  mqtt:
+    username: xiaoji                           # 账号
+    password: xiaoji                           # 密码
+    host-url: tcp://121.36.229.15:1883             # mqtt连接tcp地址
+    client-id: ${random.value}                           # 客户端Id，每个启动的id要不同 随机：${random.value}
+    default-topic: test                       # 默认主题
+    timeout: 100                              # 超时时间
+    keepalive: 100                            # 保持连接数
+
+# 公众号配置(必填)
+wx:
+  miniapp:
+    appid: wxad4053c650f0a573 #  #
+    appSecret: f3d24b6a3cc16417152d76265f8b1467 # #
+    config-storage:
+      type: Memory                     # 配置类型: Memory(默认), Jedis, RedisTemplate
+      key-prefix: wa                 # 相关redis前缀配置: wa(默认)
+      redis:
+        host: 81.68.236.154
+        port: 6379
+        passowrd: lif314
+      # http客户端配置
+      http-client-type: HttpClient      # http客户端类型: HttpClient(默认), OkHttp, JoddHttp
+

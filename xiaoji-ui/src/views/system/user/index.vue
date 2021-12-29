@@ -90,7 +90,7 @@
               icon="el-icon-plus"
               size="mini"
               @click="handleAdd"
-              v-hasPermi="['system:user:add']"
+              v-hasPermi="['system:sysUser:add']"
             >新增</el-button>
           </el-col>
           <el-col :span="1.5">
@@ -101,7 +101,7 @@
               size="mini"
               :disabled="single"
               @click="handleUpdate"
-              v-hasPermi="['system:user:edit']"
+              v-hasPermi="['system:sysUser:edit']"
             >修改</el-button>
           </el-col>
           <el-col :span="1.5">
@@ -112,7 +112,7 @@
               size="mini"
               :disabled="multiple"
               @click="handleDelete"
-              v-hasPermi="['system:user:remove']"
+              v-hasPermi="['system:sysUser:remove']"
             >删除</el-button>
           </el-col>
           <el-col :span="1.5">
@@ -122,7 +122,7 @@
               icon="el-icon-upload2"
               size="mini"
               @click="handleImport"
-              v-hasPermi="['system:user:import']"
+              v-hasPermi="['system:sysUser:import']"
             >导入</el-button>
           </el-col>
           <el-col :span="1.5">
@@ -132,7 +132,7 @@
               icon="el-icon-download"
               size="mini"
               @click="handleExport"
-              v-hasPermi="['system:user:export']"
+              v-hasPermi="['system:sysUser:export']"
             >导出</el-button>
           </el-col>
           <right-toolbar :showSearch.sync="showSearch" @queryTable="getList" :columns="columns"></right-toolbar>
@@ -172,24 +172,24 @@
                 type="text"
                 icon="el-icon-edit"
                 @click="handleUpdate(scope.row)"
-                v-hasPermi="['system:user:edit']"
+                v-hasPermi="['system:sysUser:edit']"
               >修改</el-button>
               <el-button
                 size="mini"
                 type="text"
                 icon="el-icon-delete"
                 @click="handleDelete(scope.row)"
-                v-hasPermi="['system:user:remove']"
+                v-hasPermi="['system:sysUser:remove']"
               >删除</el-button>
-              <el-dropdown size="mini" @command="(command) => handleCommand(command, scope.row)" v-hasPermi="['system:user:resetPwd', 'system:user:edit']">
+              <el-dropdown size="mini" @command="(command) => handleCommand(command, scope.row)" v-hasPermi="['system:sysUser:resetPwd', 'system:sysUser:edit']">
                 <span class="el-dropdown-link">
                   <i class="el-icon-d-arrow-right el-icon--right"></i>更多
                 </span>
                 <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item command="handleResetPwd" icon="el-icon-key"
-                    v-hasPermi="['system:user:resetPwd']">重置密码</el-dropdown-item>
+                    v-hasPermi="['system:sysUser:resetPwd']">重置密码</el-dropdown-item>
                   <el-dropdown-item command="handleAuthRole" icon="el-icon-circle-check"
-                    v-hasPermi="['system:user:edit']">分配角色</el-dropdown-item>
+                    v-hasPermi="['system:sysUser:edit']">分配角色</el-dropdown-item>
                 </el-dropdown-menu>
               </el-dropdown>
             </template>
@@ -345,7 +345,7 @@
 </template>
 
 <script>
-import { listUser, getUser, delUser, addUser, updateUser, resetUserPwd, changeUserStatus } from "@/api/system/user";
+import { listUser, getUser, delUser, addUser, updateUser, resetUserPwd, changeUserStatus } from "@/api/system/sysUser";
 import { getToken } from "@/utils/auth";
 import { treeselect } from "@/api/system/dept";
 import Treeselect from "@riophae/vue-treeselect";
@@ -406,7 +406,7 @@ export default {
         // 设置上传的请求头部
         headers: { Authorization: "Bearer " + getToken() },
         // 上传的地址
-        url: process.env.VUE_APP_BASE_API + "/system/user/importData"
+        url: process.env.VUE_APP_BASE_API + "/system/sysUser/importData"
       },
       // 查询参数
       queryParams: {
@@ -466,7 +466,7 @@ export default {
   created() {
     this.getList();
     this.getTreeselect();
-    this.getConfigKey("sys.user.initPassword").then(response => {
+    this.getConfigKey("sys.sysUser.initPassword").then(response => {
       this.initPassword = response.msg;
     });
   },
@@ -606,7 +606,7 @@ export default {
     /** 分配角色操作 */
     handleAuthRole: function(row) {
       const userId = row.userId;
-      this.$router.push("/system/user-auth/role/" + userId);
+      this.$router.push("/system/sysUser-auth/role/" + userId);
     },
     /** 提交按钮 */
     submitForm: function() {
@@ -640,7 +640,7 @@ export default {
     },
     /** 导出按钮操作 */
     handleExport() {
-      this.download('system/user/export', {
+      this.download('system/sysUser/export', {
         ...this.queryParams
       }, `user_${new Date().getTime()}.xlsx`)
     },
@@ -651,7 +651,7 @@ export default {
     },
     /** 下载模板操作 */
     importTemplate() {
-      this.download('system/user/importTemplate', {
+      this.download('system/sysUser/importTemplate', {
       }, `user_template_${new Date().getTime()}.xlsx`)
     },
     // 文件上传中处理

@@ -41,6 +41,7 @@ public class TokenController
         return R.ok(tokenService.createToken(userInfo));
     }
 
+
     @DeleteMapping("logout")
     public R<?> logout(HttpServletRequest request)
     {
@@ -69,6 +70,7 @@ public class TokenController
         return R.ok();
     }
 
+
     @PostMapping("register")
     public R<?> register(@RequestBody RegisterBody registerBody)
     {
@@ -76,4 +78,5 @@ public class TokenController
         sysLoginService.register(registerBody.getUsername(), registerBody.getPassword());
         return R.ok();
     }
+
 }

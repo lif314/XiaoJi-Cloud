@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 分组Service接口
  *
- * @author kerwincui
+ * @author xiaoji
  * @date 2021-05-18
  */
 public interface IIotGroupService {

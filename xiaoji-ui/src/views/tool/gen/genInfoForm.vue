@@ -40,7 +40,7 @@
         <el-form-item prop="businessName">
           <span slot="label">
             生成业务名
-            <el-tooltip content="可理解为功能英文名，例如 user" placement="top">
+            <el-tooltip content="可理解为功能英文名，例如 sysUser" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>

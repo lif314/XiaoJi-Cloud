@@ -1,6 +1,6 @@
 package com.xiaoji.authface.service;
 
-import com.xiaoji.authface.repository.User;
+import com.xiaoji.authface.domain.SysUser;
 import org.springframework.stereotype.Service;
 
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public interface IUserService {
 
     // 注册用户
-    User register(String name, String password, String photo);
+    SysUser register(String name,String nickname, String password);
 
     // 查询用户--- 账号登录
     String accountLogin(String name, String password);

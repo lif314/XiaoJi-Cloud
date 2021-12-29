@@ -33,7 +33,7 @@
         </template>
       </el-table-column>
     </el-table>
-    
+
     <pagination v-show="total>0" :total="total" :page.sync="pageNum" :limit.sync="pageSize" />
 
     <el-form label-width="100px">
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { getAuthRole, updateAuthRole } from "@/api/system/user";
+import { getAuthRole, updateAuthRole } from "@/api/system/sysUser";
 
 export default {
   name: "AuthRole",
@@ -71,7 +71,7 @@ export default {
     if (userId) {
       this.loading = true;
       getAuthRole(userId).then((response) => {
-        this.form = response.user;
+        this.form = response.sysUser;
         this.roles = response.roles;
         this.total = this.roles.length;
         this.$nextTick(() => {
@@ -109,7 +109,7 @@ export default {
     },
     /** 关闭按钮 */
     close() {
-      const obj = { path: "/system/user" };
+      const obj = { path: "/system/sysUser" };
       this.$tab.closeOpenPage(obj);
     },
   },

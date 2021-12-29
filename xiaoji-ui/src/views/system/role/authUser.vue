@@ -97,7 +97,7 @@
       :limit.sync="queryParams.pageSize"
       @pagination="getList"
     />
-    <select-user ref="select" :roleId="queryParams.roleId" @ok="handleQuery" />
+    <select-sysUser ref="select" :roleId="queryParams.roleId" @ok="handleQuery" />
   </div>
 </template>
 

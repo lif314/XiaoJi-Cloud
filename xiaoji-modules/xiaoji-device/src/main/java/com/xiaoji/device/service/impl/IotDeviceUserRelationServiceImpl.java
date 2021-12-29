@@ -45,10 +45,10 @@ public class IotDeviceUserRelationServiceImpl implements IIotDeviceUserRelationS
      * @param iotDeviceUserRelation 【请填写功能名称】
      * @return 结果
      */
-            @Override
+    @Override
     public int insertIotDeviceUserRelation(IotDeviceUserRelation iotDeviceUserRelation) {
-                 return iotDeviceUserRelationMapper.insertIotDeviceUserRelation(iotDeviceUserRelation);
-            }
+        return iotDeviceUserRelationMapper.insertIotDeviceUserRelation(iotDeviceUserRelation);
+    }
 
     /**
      * 修改【请填写功能名称】
@@ -56,9 +56,9 @@ public class IotDeviceUserRelationServiceImpl implements IIotDeviceUserRelationS
      * @param iotDeviceUserRelation 【请填写功能名称】
      * @return 结果
      */
-            @Override
+    @Override
     public int updateIotDeviceUserRelation(IotDeviceUserRelation iotDeviceUserRelation) {
-            return iotDeviceUserRelationMapper.updateIotDeviceUserRelation(iotDeviceUserRelation);
+        return iotDeviceUserRelationMapper.updateIotDeviceUserRelation(iotDeviceUserRelation);
     }
 
     /**
@@ -67,9 +67,9 @@ public class IotDeviceUserRelationServiceImpl implements IIotDeviceUserRelationS
      * @param ids 需要删除的【请填写功能名称】ID
      * @return 结果
      */
-            @Override
+    @Override
     public int deleteIotDeviceUserRelationByIds(Long[] ids) {
-                return iotDeviceUserRelationMapper.deleteIotDeviceUserRelationByIds(ids);
+        return iotDeviceUserRelationMapper.deleteIotDeviceUserRelationByIds(ids);
     }
 
     /**
@@ -80,7 +80,7 @@ public class IotDeviceUserRelationServiceImpl implements IIotDeviceUserRelationS
      */
     @Override
     public int deleteIotDeviceUserRelationById(Long id) {
-                return iotDeviceUserRelationMapper.deleteIotDeviceUserRelationById(id);
+        return iotDeviceUserRelationMapper.deleteIotDeviceUserRelationById(id);
     }
 
     @Override

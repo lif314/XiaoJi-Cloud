@@ -9,6 +9,6 @@ public interface IFaceService {
     String faceLogin(String faceBase64);
 
     // 人脸注册
-    String faceRegister(String user_id, String name, String faceBase64);
+    String faceRegister(String user_id, String nickname, String faceBase64);
 
 }

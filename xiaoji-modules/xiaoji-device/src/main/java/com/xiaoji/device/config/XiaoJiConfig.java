@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
  *
  * @author xiaoji
  */
-
 @Component
 @ConfigurationProperties(prefix = "xiaoji")
 public class XiaoJiConfig {

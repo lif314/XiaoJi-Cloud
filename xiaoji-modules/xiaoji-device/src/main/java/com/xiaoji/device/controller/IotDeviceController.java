@@ -10,6 +10,7 @@ import com.xiaoji.common.core.web.page.TableDataInfo;
 import com.xiaoji.common.log.annotation.Log;
 import com.xiaoji.common.log.enums.BusinessType;
 import com.xiaoji.common.security.annotation.RequiresPermissions;
+import com.xiaoji.common.security.utils.SecurityUtils;
 import com.xiaoji.device.domain.IotDevice;
 import com.xiaoji.device.domain.vo.DeviceControlCMD;
 import com.xiaoji.device.domain.vo.IotDeviceListDto;
@@ -38,22 +39,21 @@ public class IotDeviceController extends BaseController {
      * 查询设备列表
      */
     @ApiOperation(value = "设备列表", notes = "设备列表")
-    @RequiresPermissions("device:device:list")
+    @RequiresPermissions("device:table:list")
     @GetMapping("/list")
     public TableDataInfo list(IotDevice iotDevice) {
         startPage();
-        LoginUser user = (LoginUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        iotDevice.setOwnerId(user.getUserid().toString());
+        LoginUser loginUser = SecurityUtils.getLoginUser();
+        iotDevice.setOwnerId(loginUser.getUserid().toString());
         List<IotDeviceListDto> list = iotDeviceService.selectIotDeviceList(iotDevice);
         return getDataTable(list);
     }
-
 
     /**
      * 导出设备列表
      */
     @ApiOperation(value = "导出设备列表", notes = "导出设备列表")
-    @RequiresPermissions("device:device:export")
+    @RequiresPermissions("device:table:export")
     @Log(title = "设备", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(IotDevice iotDevice) {
@@ -66,7 +66,7 @@ public class IotDeviceController extends BaseController {
      * 获取设备详细信息
      */
     @ApiOperation(value = "获取设备详情", notes = "获取设备详情")
-    @RequiresPermissions("device:device:query")
+    @RequiresPermissions("device:table:query")
     @GetMapping(value = "/{deviceId}")
     public AjaxResult getInfo(@PathVariable("deviceId") Long deviceId) {
         return AjaxResult.success(iotDeviceService.selectIotDeviceById(deviceId));
@@ -76,7 +76,7 @@ public class IotDeviceController extends BaseController {
      * 根据设备编号获取设备详细信息
      */
     @ApiOperation(value = "根据设备编号获取设备详情", notes = "根据设备编号获取设备详情")
-    @RequiresPermissions("device:device:query")
+    @RequiresPermissions("device:table:query")
     @GetMapping(value = "/getByNum/{deviceNum}")
     public AjaxResult getInfoByNum(@PathVariable("deviceNum") String deviceNum) {
         return AjaxResult.success(iotDeviceService.selectIotDeviceByNum(deviceNum));
@@ -86,7 +86,7 @@ public class IotDeviceController extends BaseController {
      * 新增设备
      */
     @ApiOperation(value = "新增设备", notes = "新增设备")
-    @RequiresPermissions("device:device:add")
+    @RequiresPermissions("device:table:add")
     @Log(title = "设备", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody IotDevice iotDevice) {
@@ -104,7 +104,7 @@ public class IotDeviceController extends BaseController {
      * 修改设备
      */
     @ApiOperation(value = "修改设备", notes = "修改设备")
-    @RequiresPermissions("device:device:edit")
+    @RequiresPermissions("device:table:edit")
     @Log(title = "设备", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody IotDevice iotDevice) {
@@ -115,7 +115,7 @@ public class IotDeviceController extends BaseController {
      * 删除设备
      */
     @ApiOperation(value = "删除设备", notes = "删除设备")
-    @RequiresPermissions("device:device:remove")
+    @RequiresPermissions("device:table:remove")
     @Log(title = "设备", businessType = BusinessType.DELETE)
     @DeleteMapping("/{deviceIds}")
     public AjaxResult remove(@PathVariable Long[] deviceIds) {
@@ -138,7 +138,7 @@ public class IotDeviceController extends BaseController {
     }
 
     @ApiOperation(value = "控制设备", notes = "控制设备")
-    @RequiresPermissions("device:device:control")
+    @RequiresPermissions("device:table:control")
     @Log(title = "设备", businessType = BusinessType.UPDATE)
     @PostMapping("/control")
     public AjaxResult control(@RequestBody DeviceControlCMD deviceControlCMD) {
@@ -156,7 +156,7 @@ public class IotDeviceController extends BaseController {
 
 
     @ApiOperation(value = "小程序设备列表", notes = "小程序设备列表")
-    @RequiresPermissions("device:device:list")
+    @RequiresPermissions("device:table:list")
     @GetMapping("/listDevice")
     public TableDataInfo listDevice(IotDevice iotDevice) {
         startPage();

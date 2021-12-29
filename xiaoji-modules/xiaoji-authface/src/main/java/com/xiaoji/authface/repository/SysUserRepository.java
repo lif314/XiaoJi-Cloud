@@ -1,15 +1,17 @@
 package com.xiaoji.authface.repository;
 
+import com.xiaoji.authface.domain.SysUser;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
+@Repository
+public interface SysUserRepository extends CrudRepository<SysUser, Long> {
 
-public interface UserRepository extends CrudRepository<User, Integer> {
-
-    List<User> findUsersByUserNameAndUserPasswd(String name, String password);
+    List<SysUser> findSysUserByUserNameAndPassword(String nickname, String password);
 }
 
 /**

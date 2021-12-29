@@ -9,7 +9,7 @@ import com.xiaoji.system.domain.SysUserOnline;
 /**
  * 在线用户 服务层处理
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 @Service
 public class SysUserOnlineServiceImpl implements ISysUserOnlineService
