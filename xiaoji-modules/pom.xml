@@ -21,6 +21,7 @@
         <module>xiaoji-movie</module>
         <module>xiaoji-emotion</module>
         <module>xiaoji-authface</module>
+        <module>xiaoji-scene</module>
     </modules>
 
     <artifactId>xiaoji-modules</artifactId>

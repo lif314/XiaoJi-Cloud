@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface SysUserRepository extends CrudRepository<SysUser, Long> {
 
-    List<SysUser> findSysUserByUserNameAndPassword(String nickname, String password);
+    List<SysUser> findSysUserByUserName(String name);
 }
 
 /**

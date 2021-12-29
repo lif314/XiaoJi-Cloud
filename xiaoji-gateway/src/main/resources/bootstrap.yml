@@ -40,3 +40,7 @@ spring:
             groupId: DEFAULT_GROUP
             data-type: json
             rule-type: flow
+    gateway:
+      httpclient:
+        max-initial-line-length: 65535
+        max-header-size: 65535

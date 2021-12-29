@@ -1,12 +1,20 @@
 package com.xiaoji.authface.service;
 
 
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.nacos.common.utils.UuidUtils;
 import com.xiaoji.authface.domain.SysUser;
 import com.xiaoji.authface.repository.SysUserRepository;
+import com.xiaoji.authface.result.Result;
+import com.xiaoji.authface.result.ResultFactory;
+import com.xiaoji.authface.utils.UuidUtilsLong;
+import com.xiaoji.common.core.text.UUID;
+import com.xiaoji.common.security.utils.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service  // 接口和实现处都需要添加@Service注解
 public class UserService implements IUserService {
@@ -23,22 +31,24 @@ public class UserService implements IUserService {
     public SysUser register(String name, String nickname, String password){
 
         SysUser sysUser = new SysUser();
+        Long id = UuidUtilsLong.getId();
+        sysUser.setId(id);
         sysUser.setUserName(name);
         sysUser.setNickName(nickname);
-        sysUser.setUserType("移动用户");
-        sysUser.setPassword(password);
+        sysUser.setPassword(SecurityUtils.encryptPassword(password));
         userRepository.save(sysUser);
         return sysUser;
     }
 
     // 账号登录
     @Override
-    public String accountLogin(String name, String password) {
-        List<SysUser> sysUsers = userRepository.findSysUserByUserNameAndPassword(name, password);
-        if(!sysUsers.isEmpty()){
-            return  sysUsers.toString();
+    public Result accountLogin(String name, String password) {
+        List<SysUser> sysUsers = userRepository.findSysUserByUserName(name);
+        boolean flag = SecurityUtils.matchesPassword(password, sysUsers.get(0).getPassword());
+        if(flag){
+            return ResultFactory.buildSuccessResult(sysUsers.get(0));
         }else{
-            return "FAILED";
+            return ResultFactory.buildFailResult("账号或密码错误");
         }
     }
 }

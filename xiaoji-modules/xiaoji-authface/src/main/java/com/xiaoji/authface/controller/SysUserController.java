@@ -2,6 +2,7 @@ package com.xiaoji.authface.controller;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.xiaoji.authface.domain.SysUser;
+import com.xiaoji.authface.result.Result;
 import com.xiaoji.authface.service.IFaceService;
 import com.xiaoji.authface.service.IUserService;
 import io.swagger.annotations.Api;
@@ -46,11 +47,20 @@ public class SysUserController {
     public @ResponseBody
     String register(@RequestParam String account,@RequestParam String nickname, @RequestParam String password, @RequestParam String faceBase64){
         // 账号密码存储在数据库中
-        SysUser sysUser = userService.register(account, nickname,password);
+        SysUser sysUser = userService.register(account, nickname, password);
         // 人脸库中进行注册 -- 用户ID和昵称
-        String res = faceService.faceRegister(sysUser.getUserId().toString(), nickname, faceBase64);  // 百度云人脸注册, id与数据库保持一致
+        String res = faceService.faceRegister(sysUser.getId().toString(), nickname, faceBase64);  // 百度云人脸注册, id与数据库保持一致
 
         return  "{{" + sysUser + "}" + "," + res + "}";
+    }
+
+    @ApiOperation(value = "register", notes = "账号+昵称+密码+人脸注册")
+    @PostMapping(path="/sregister")
+    public @ResponseBody
+    String simpleRegister(@RequestParam String account,@RequestParam String nickname, @RequestParam String password){
+        // 账号密码存储在数据库中
+        SysUser sysUser = userService.register(account, nickname, password);
+        return sysUser.toString();
     }
 
     // 账号登录
@@ -58,7 +68,7 @@ public class SysUserController {
     @ApiOperation(value = "login", notes = "账号密码登录")
     @PostMapping(path = "/login")
     public @ResponseBody
-    String accountLogin(@RequestParam String name, @RequestParam String password){
+    Result accountLogin(@RequestParam String name, @RequestParam String password){
         return userService.accountLogin(name, password);
     }
 
