@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IncomeDAO extends JpaRepository<Income, Integer>, JpaSpecificationExecutor<Income> {
+    Income findByFamilyId(Integer familyId);
 }

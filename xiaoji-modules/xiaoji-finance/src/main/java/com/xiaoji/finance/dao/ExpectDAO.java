@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ExpectDAO extends JpaRepository<Expect, Integer> {
+    Expect findByFamilyId(Integer familyId);
 }

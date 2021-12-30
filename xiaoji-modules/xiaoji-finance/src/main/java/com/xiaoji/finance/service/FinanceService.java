@@ -48,11 +48,11 @@ public class FinanceService {
     }
 
     public Income getIncome(Integer familyId) {
-        return incomeDAO.getById(familyId);
+        return incomeDAO.findByFamilyId(familyId);
     }
 
     public Expect getExpect(Integer familyId) {
-        return expectDAO.getById(familyId);
+        return expectDAO.findByFamilyId(familyId);
     }
 
     /**
@@ -61,6 +61,34 @@ public class FinanceService {
      */
     public void setExpect(Expect expect) {
         expectDAO.save(expect);
+    }
+
+    /**
+     * 计算实际消费
+     */
+    public Expect actual(Integer familyId){
+        Expect actual = new Expect();
+        List<Bill> bills = billDAO.findAllByFamilyId(familyId);
+        Double food = 0.0, clothes = 0.0, dailyNecessities = 0.0, dotc = 0.0, education = 0.0, medical = 0.0, entertainment=0.0;
+        for(Bill bill: bills){
+            switch (bill.getType()){
+                case "food":food+=bill.getAmount();break;
+                case "clothes":clothes+=bill.getAmount();break;
+                case "dailyNecessities":dailyNecessities+=bill.getAmount();break;
+                case "dotc":dotc+=bill.getAmount();break;
+                case "education":education+=bill.getAmount();break;
+                case "medical":medical+=bill.getAmount();break;
+                case "entertainment":entertainment +=bill.getAmount();break;
+            }
+        }
+        actual.setClothes(clothes);
+        actual.setDailyNecessities(dailyNecessities);
+        actual.setDotc(dotc);
+        actual.setEducation(education);
+        actual.setEntertainment(entertainment);
+        actual.setFood(food);
+        actual.setMedical(medical);
+        return actual;
     }
 
 }

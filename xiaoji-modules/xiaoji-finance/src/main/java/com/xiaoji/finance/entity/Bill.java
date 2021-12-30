@@ -7,8 +7,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Data
 @Table(name = "bill")
+@Data
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
 public class Bill {
     @Id
@@ -28,7 +28,7 @@ public class Bill {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "familyId")
+    @Column(name = "family_id")
     private Integer familyId;
 
 }
