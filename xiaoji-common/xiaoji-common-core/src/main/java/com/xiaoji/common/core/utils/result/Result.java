@@ -1,4 +1,4 @@
-package com.xiaoji.finance.result;
+package com.xiaoji.common.core.utils.result;
 
 public class Result {
     /**

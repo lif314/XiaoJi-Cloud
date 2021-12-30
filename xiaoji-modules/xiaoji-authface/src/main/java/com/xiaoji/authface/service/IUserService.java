@@ -1,7 +1,7 @@
 package com.xiaoji.authface.service;
 
 import com.xiaoji.authface.domain.SysUser;
-import com.xiaoji.authface.result.Result;
+import com.xiaoji.common.core.utils.result.Result;
 import org.springframework.stereotype.Service;
 
 

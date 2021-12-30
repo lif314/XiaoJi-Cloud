@@ -7,7 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
- * 系统模块
+ * 情景模式
+ *
+ * 温度调节
+ * 灯光调节
+ * 音乐调节
+ * 情绪检测
  *
  * @author xiaoji
  */

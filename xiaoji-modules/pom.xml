@@ -22,6 +22,7 @@
         <module>xiaoji-emotion</module>
         <module>xiaoji-authface</module>
         <module>xiaoji-scene</module>
+        <module>xiaoji-music</module>
     </modules>
 
     <artifactId>xiaoji-modules</artifactId>

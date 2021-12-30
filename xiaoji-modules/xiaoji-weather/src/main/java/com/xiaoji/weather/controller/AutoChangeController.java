@@ -34,7 +34,7 @@ public class AutoChangeController {
     //调用AutoChangeService获取最适宜温度光强，通过TemperatureService和CdService改变id=0的温度和光照
     @GetMapping("/autochange")
     @ApiOperation(value = "通过调用第三方服务自动更改室内温度，光强", notes="返回当前最适宜温度，光强")
-    private List<Integer> autoChange(){
+    public List<Integer> autoChange(){
         //接收今日最适宜温度以及光照
         List<Integer> suit_list=autoChangeService.getAutoChangeInfo();
         Integer suit_temperature=suit_list.get(0);

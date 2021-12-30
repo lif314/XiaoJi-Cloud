@@ -2,9 +2,9 @@ package com.xiaoji.authface.controller;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.xiaoji.authface.domain.SysUser;
-import com.xiaoji.authface.result.Result;
 import com.xiaoji.authface.service.IFaceService;
 import com.xiaoji.authface.service.IUserService;
+import com.xiaoji.common.core.utils.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

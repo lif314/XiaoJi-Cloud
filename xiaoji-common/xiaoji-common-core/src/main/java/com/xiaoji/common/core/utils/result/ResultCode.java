@@ -1,4 +1,4 @@
-package com.xiaoji.authface.result;
+package com.xiaoji.common.core.utils.result;
 
 public enum ResultCode {
     /**

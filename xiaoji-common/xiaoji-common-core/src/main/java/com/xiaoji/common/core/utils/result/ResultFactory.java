@@ -1,9 +1,10 @@
-package com.xiaoji.authface.result;
+package com.xiaoji.common.core.utils.result;
 
 /**
  * @description 响应结果生成工厂类
  */
 public class ResultFactory {
+
     public static Result buildSuccessResult(Object data) {
         return buildResult(ResultCode.SUCCESS, "成功", data);
     }

@@ -13,6 +13,7 @@ import com.xiaoji.system.api.domain.SysFile;
  * 文件服务降级处理
  * 
  * @author xiaoji
+ *
  */
 @Component
 public class RemoteFileFallbackFactory implements FallbackFactory<RemoteFileService>

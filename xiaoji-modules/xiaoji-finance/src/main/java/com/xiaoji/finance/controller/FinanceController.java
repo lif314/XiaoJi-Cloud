@@ -1,10 +1,10 @@
 package com.xiaoji.finance.controller;
 
+import com.xiaoji.common.core.utils.result.Result;
+import com.xiaoji.common.core.utils.result.ResultFactory;
 import com.xiaoji.finance.entity.Bill;
 import com.xiaoji.finance.entity.Expect;
 import com.xiaoji.finance.entity.Income;
-import com.xiaoji.finance.result.Result;
-import com.xiaoji.finance.result.ResultFactory;
 import com.xiaoji.finance.service.FinanceService;
 
 import io.swagger.annotations.Api;

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 @Api(tags = "虚拟化妆")
+@RequestMapping("/makeup")
 public class MakeupController {
 
     @Autowired

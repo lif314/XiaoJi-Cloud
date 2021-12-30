@@ -1,8 +1,8 @@
 package com.xiaoji.movie.controller;
 
 
-import com.xiaoji.movie.result.Result;
-import com.xiaoji.movie.result.ResultFactory;
+import com.xiaoji.common.core.utils.result.Result;
+import com.xiaoji.common.core.utils.result.ResultFactory;
 import com.xiaoji.movie.service.VideoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
