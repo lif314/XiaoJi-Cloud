@@ -16,8 +16,8 @@ public class NewsController {
     private RequestUrlService requestUrlService;
 
     //请求第三方url
-    @GetMapping("/type")
-    public @ResponseBody JsonRootBean getJsonRootBeanBytype(@RequestParam("type") String type){
+    @GetMapping("/type/{type}")
+    public @ResponseBody JsonRootBean getJsonRootBeanBytype(@PathVariable("type") String type){
         //使用service层调用第三方接口
         return requestUrlService.getJsonRootBeanBytype(type);
     }
