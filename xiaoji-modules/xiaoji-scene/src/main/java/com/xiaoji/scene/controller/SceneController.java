@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * 情景模式
  *
@@ -64,6 +66,7 @@ public class SceneController {
      */
     @GetMapping("/pattern")
    public Scene recommendSceneFactorsByType(String type){
-       return null;
+        List<Integer> integers = remoteWeatherService.autoChange();
+        return null;
    }
 }

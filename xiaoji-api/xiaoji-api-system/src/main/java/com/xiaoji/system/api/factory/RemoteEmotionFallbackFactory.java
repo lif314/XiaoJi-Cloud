@@ -30,8 +30,8 @@ public class RemoteEmotionFallbackFactory implements FallbackFactory<RemoteEmoti
              * @return 结果
              */
             @Override
-            public R<Object> emotionRecognition(String faceBase64) {
-                return R.fail("情绪检测服务失败" + throwable.getMessage());
+            public String emotionRecognition(String faceBase64) {
+                return R.fail("情绪检测服务失败" + throwable.getMessage()).toString();
             }
         };
     }

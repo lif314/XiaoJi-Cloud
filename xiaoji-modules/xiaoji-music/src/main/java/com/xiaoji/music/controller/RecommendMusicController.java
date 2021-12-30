@@ -1,6 +1,7 @@
 package com.xiaoji.music.controller;
 
 
+import com.xiaoji.common.core.domain.R;
 import com.xiaoji.common.core.utils.result.Result;
 import com.xiaoji.common.core.utils.result.ResultFactory;
 import com.xiaoji.music.service.IRecommendMusicService;

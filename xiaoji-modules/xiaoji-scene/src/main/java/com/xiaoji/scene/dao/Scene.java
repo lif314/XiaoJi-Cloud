@@ -5,7 +5,4 @@ package com.xiaoji.scene.dao;
  */
 public class Scene {
 
-
-
-
 }
