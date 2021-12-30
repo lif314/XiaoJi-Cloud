@@ -1,10 +1,6 @@
 package com.xiaoji.system.api.factory;
 
-import com.xiaoji.common.core.domain.R;
-import com.xiaoji.system.api.RemoteUserService;
 import com.xiaoji.system.api.RemoteWeatherService;
-import com.xiaoji.system.api.domain.SysUser;
-import com.xiaoji.system.api.model.LoginUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.openfeign.FallbackFactory;

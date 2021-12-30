@@ -21,5 +21,5 @@ public interface RemoteEmotionService {
      * @return 结果
      */
     @PostMapping(value = "/emotion/get")
-    public R<Object> emotionRecognition(@RequestParam String faceBase64);
+    public String emotionRecognition(@RequestParam String faceBase64);
 }
