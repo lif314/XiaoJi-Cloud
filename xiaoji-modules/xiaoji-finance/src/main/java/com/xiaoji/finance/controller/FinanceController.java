@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 @RequestMapping("/finance")
 @AllArgsConstructor
-
 @Api( tags = "家庭理财")
 public class FinanceController {
 
@@ -37,7 +36,7 @@ public class FinanceController {
 
     @ApiOperation(value = "账单", notes = "记账")
     @PostMapping("/addBill")
-    public Result addBill(Bill bill){
+    public Result addBill(@RequestBody Bill bill){
         financeService.addBill(bill);
         return ResultFactory.buildSuccessResult("添加账单成功！");
     }
@@ -48,7 +47,7 @@ public class FinanceController {
     }
     @ApiOperation("设定收入")
     @PostMapping("/setIncome")
-    public Result setIncome(Income income){
+    public Result setIncome(@RequestBody Income income){
         financeService.setIncome(income);
         return ResultFactory.buildSuccessResult("收入来源设置完成！");
     }
@@ -59,7 +58,7 @@ public class FinanceController {
     }
     @ApiOperation("设定消费预算")
     @PostMapping("/setExpect")
-    public Result setExpect(Expect expect){
+    public Result setExpect(@RequestBody Expect expect){
         financeService.setExpect(expect);
         return ResultFactory.buildSuccessResult("设置消费规划完成！");
     }
