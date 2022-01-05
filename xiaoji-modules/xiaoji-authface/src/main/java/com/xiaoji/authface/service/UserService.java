@@ -3,7 +3,6 @@ package com.xiaoji.authface.service;
 
 import com.xiaoji.authface.domain.SysUser;
 import com.xiaoji.authface.repository.SysUserRepository;
-import com.xiaoji.authface.utils.UuidUtilsLong;
 import com.xiaoji.common.core.utils.result.Result;
 import com.xiaoji.common.core.utils.result.ResultFactory;
 import com.xiaoji.common.security.utils.SecurityUtils;
@@ -11,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service  // 接口和实现处都需要添加@Service注解
@@ -26,10 +26,8 @@ public class UserService implements IUserService {
     // 注册用户
     @Override
     public SysUser register(String name, String nickname, String password){
-
         SysUser sysUser = new SysUser();
-        Long id = UuidUtilsLong.getId();
-        sysUser.setId(id);
+//        sysUser.setId(id);
         sysUser.setUserName(name);
         sysUser.setNickName(nickname);
         sysUser.setPassword(SecurityUtils.encryptPassword(password));

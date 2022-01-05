@@ -10,8 +10,8 @@ import java.util.List;
 // CRUD refers Create, Read, Update, Delete
 @Repository
 public interface SysUserRepository extends CrudRepository<SysUser, Long> {
-
     List<SysUser> findSysUserByUserName(String name);
+    List<SysUser> findAllById(Long id);
 }
 
 /**

@@ -4,14 +4,17 @@ package com.xiaoji.authface.service;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.xiaoji.authface.domain.SysUser;
 import com.xiaoji.authface.repository.SysUserRepository;
 import com.xiaoji.authface.utils.GsonUtils;
 import com.xiaoji.authface.utils.HttpUtil;
+import com.xiaoji.common.core.utils.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.baidu.aip.face.AipFace;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
@@ -50,18 +53,20 @@ public class FaceService implements IFaceService {
      * @return 返回判断结果
      */
     @Override
-    public String faceLogin(String faceBase64) {
+    public SysUser faceLogin(String faceBase64) {
 
         JSONObject user = faceMatch(faceBase64);
 
         double score =  user.getDouble("score");
-//        System.out.println("人脸识别分数："+score);
+        System.out.println("人脸识别分数："+score);
         if(score > 90){
+            String user_id = (String) user.get("user_id");
+            SysUser sysUser = userRepository.findAllById(Long.parseLong(user_id)).get(0);
             System.out.println(score);
 //            System.out.println("Face Login Score:" + score);
-            return user.toString();
+            return sysUser;
         }else{
-            return "FAILED";
+            return null;
         }
     }
 
@@ -72,6 +77,7 @@ public class FaceService implements IFaceService {
      */
     @Override
     public String faceRegister(String user_id, String nickname, String faceBase64) {
+//        System.out.println("注册信息： "+user_id+ nickname+faceBase64);
         // 人脸检测，返回face_token, age, emotion
         String str = faceDetect(faceBase64);
         // 解析json,获取face_token
