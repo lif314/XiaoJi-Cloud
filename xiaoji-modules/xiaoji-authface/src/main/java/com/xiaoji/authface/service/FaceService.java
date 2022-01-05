@@ -55,8 +55,8 @@ public class FaceService implements IFaceService {
         JSONObject user = faceMatch(faceBase64);
 
         double score =  user.getDouble("score");
-
-        if(score > 95){
+//        System.out.println("人脸识别分数："+score);
+        if(score > 90){
             System.out.println(score);
 //            System.out.println("Face Login Score:" + score);
             return user.toString();
