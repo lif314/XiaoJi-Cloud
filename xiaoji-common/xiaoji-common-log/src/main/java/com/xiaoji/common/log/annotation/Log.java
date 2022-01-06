@@ -11,7 +11,7 @@ import com.xiaoji.common.log.enums.OperatorType;
 /**
  * 自定义操作日志记录注解
  * 
- * @author ruoyi
+ * @author xiaoji
  *
  */
 @Target({ ElementType.PARAMETER, ElementType.METHOD })

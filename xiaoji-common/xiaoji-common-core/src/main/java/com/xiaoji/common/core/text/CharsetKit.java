@@ -7,7 +7,7 @@ import com.xiaoji.common.core.utils.StringUtils;
 /**
  * 字符集工具类
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class CharsetKit
 {

@@ -3,7 +3,7 @@ package com.xiaoji.common.core.exception.job;
 /**
  * 计划策略异常
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class TaskException extends Exception
 {

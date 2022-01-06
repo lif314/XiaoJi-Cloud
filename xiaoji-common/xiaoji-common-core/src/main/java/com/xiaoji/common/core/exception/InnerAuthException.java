@@ -3,7 +3,7 @@ package com.xiaoji.common.core.exception;
 /**
  * 内部认证异常
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class InnerAuthException extends RuntimeException
 {

@@ -3,7 +3,7 @@ package com.xiaoji.common.core.exception;
 /**
  * 工具类异常
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class UtilException extends RuntimeException
 {

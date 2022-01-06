@@ -3,7 +3,7 @@ package com.xiaoji.common.security.annotation;
 /**
  * 权限注解的验证模式
  * 
- * @author ruoyi
+ * @author xiaoji
  *
  */
 public enum Logical

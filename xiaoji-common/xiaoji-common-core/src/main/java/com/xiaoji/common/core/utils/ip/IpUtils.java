@@ -8,7 +8,7 @@ import com.xiaoji.common.core.utils.StringUtils;
 /**
  * 获取IP方法
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class IpUtils
 {

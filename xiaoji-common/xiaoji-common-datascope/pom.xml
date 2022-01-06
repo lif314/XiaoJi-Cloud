@@ -17,7 +17,7 @@
 
     <dependencies>
 		
-        <!-- RuoYi Common Security -->
+        <!-- xiaoji Common Security -->
         <dependency>
             <groupId>com.xiaoji</groupId>
             <artifactId>xiaoji-common-security</artifactId>

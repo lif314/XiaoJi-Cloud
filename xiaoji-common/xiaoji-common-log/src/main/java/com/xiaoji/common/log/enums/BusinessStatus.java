@@ -3,7 +3,7 @@ package com.xiaoji.common.log.enums;
 /**
  * 操作状态
  * 
- * @author ruoyi
+ * @author xiaoji
  *
  */
 public enum BusinessStatus

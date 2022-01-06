@@ -6,7 +6,7 @@ import com.xiaoji.common.core.utils.StringUtils;
 /**
  * 字符串格式化
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class StrFormatter
 {

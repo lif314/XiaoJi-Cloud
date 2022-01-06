@@ -13,7 +13,7 @@ import com.xiaoji.common.core.utils.StringUtils;
 /**
  * 类型转换器
  * 
- * @author ruoyi
+ * @author xiaoji
  */
 public class Convert
 {

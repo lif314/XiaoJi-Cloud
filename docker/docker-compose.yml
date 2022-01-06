@@ -1,4 +1,4 @@
-version : '3.8'
+version : '3.2.0'
 services:
   xiaoji-nacos:
     container_name: xiaoji-nacos
@@ -65,7 +65,7 @@ services:
       - xiaoji-gateway
     links:
       - xiaoji-gateway
-  ruoyi-gateway:
+  xiaoji-gateway:
     container_name: xiaoji-gateway
     build:
       context: xiaoji/gateway
@@ -75,7 +75,7 @@ services:
     depends_on:
       - xiaoji-redis
     links:
-      - ruoyi-redis
+      - xiaoji-redis
   xiaoji-auth:
     container_name: xiaoji-auth
     build:
@@ -111,7 +111,7 @@ services:
       - xiaoji-mysql
     links:
       - xiaoji-mysql
-  ruoyi-modules-job:
+  xiaoji-modules-job:
     container_name: xiaoji-modules-job
     build:
       context: xiaoji/modules/job
@@ -122,7 +122,7 @@ services:
       - xiaoji-mysql
     links:
       - xiaoji-mysql
-  ruoyi-modules-file:
+  xiaoji-modules-file:
     container_name: xiaoji-modules-file
     build:
       context: xiaoji/modules/file
@@ -131,7 +131,7 @@ services:
       - "9300:9300"
     volumes:
     - ./xiaoji/uploadPath:/home/xiaoji/uploadPath
-  ruoyi-visual-monitor:
+  xiaoji-visual-monitor:
     container_name: xiaoji-visual-monitor
     build:
       context: xiaoji/visual/monitor

@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 /**
  * 设备状态对象 iot_device_status
  *
+ * @author xiaoji
  */
 public class IotDeviceStatus extends BaseEntity {
     private static final long serialVersionUID = 1L;

@@ -16,7 +16,7 @@
     <packaging>pom</packaging>
 
     <description>
-        xiaoji-api系统接口
+        xiaoji-api OpenFeign调用中心 系统接口
     </description>
 
 </project>
