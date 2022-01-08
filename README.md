@@ -2,7 +2,10 @@
 小济智能家居后台管理系统 -- 微服务架构
 
 # 启动
-先启动xiaoji-gateway和xiaoji-auth,然后再启动其它模块。后端统一接口是网关的端口，即http://localhost:8080, 部分服务如果无法通过网关，则可以选择直接绕过网关独立请求，如http://localhost:9140.
+先启动xiaoji-gateway和xiaoji-auth,然后再启动其它模块。后端统一接口是网关的端口，即http://localhost:8080, 
+部分服务如果无法通过网关，则可以选择直接绕过网关独立请求，如http://localhost:9140.
+
+服务模块在xiaoji-modules中，每个服务的接口都在controller中。
 
 
 # 功能
