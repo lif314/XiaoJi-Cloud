@@ -1,5 +1,8 @@
 # xiaoji-cloud
 小济智能家居后台管理系统 -- 微服务架构
+- 小济智能官网：https://github.com/lif314/xiaoji-home
+- 小济智能后台管理系统前端：https://github.com/lif314/xiaoji-ui
+- 小济智能用户系统(uniapp)：https://gitee.com/xiao-ji-smart-home/xiaoji-app-download
 
 # 启动
 先启动xiaoji-gateway和xiaoji-auth,然后再启动其它模块。后端统一接口是网关的端口，即http://localhost:8080, 
